@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/stuinfomanager?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+
+#mvc:
+#  view:
+#    prefix: /WEB-INF/jsp/
+#    suffix: .jsp
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+server:
+  port: 8080

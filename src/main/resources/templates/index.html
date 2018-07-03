@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <table id="showInfo">
+
+        </table>
+
+    </form>
+</body>
+<script type="text/javascript"
+        src="js/jquery-1.8.3.min.js"></script>
+<script>
+    showInfo();
+    function showInfo(){
+        var content = "<tr><td>班级id</td>"+
+            "<td>班级名称</td>"+
+            "</tr>";
+        $.getJSON("index.do",function(data){
+            for(var i = 0;i<data.length;i++){
+                content += "<tr>"+
+                    "<td>"+data[i].id+"</td>"+
+                    "<td>"+data[i].className+"</td>"+
+                    "</tr>";
+            }
+            $("#showInfo").html(content);
+        });
+    }
+</script>
+</html>
